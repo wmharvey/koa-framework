@@ -12,12 +12,3 @@ function getMealSchema (collection) {
 }
 
 module.exports = getMealSchema;
-
-// const meals = new Schema({
-//   breakfast: String,
-//   lunch: String,
-//   dinner: String,
-//   date: String
-// });
-
-// module.exports = mongoose.model('Meals', meals);

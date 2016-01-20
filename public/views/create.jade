@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    title Meals
+  body
+    h1 Welcome to Meals
+    if meals
+      each meal in meals
+        li Date: #{meal.date} Breakfast: #{meal.breakfast} Lunch: #{meal.lunch} Dinner: #{meal.dinner}
+    if deleted
+      p Entry was deleted: #{deleted.date}
+    if added
+      p Entry was added: #{added.date} #{added.breakfast} #{added.lunch} #{added.dinner}
+    form(action="/logs", method="POST")
+      div
+        label(for="breakfast")
+          | Breakfast:
+        textarea#breakfast(name='breakfast')
+      div
+        label(for="lunch")
+          | Lunch:
+        textarea#lunch(name='lunch')
+      div
+        label(for="dinner")
+          | Dinner:
+        textarea#dinner(name='dinner')
+      div
+        label(for="date")
+          | Date:
+        input#date(type="date", name="date")
+      .button
+        button(type="submit")
+          | Send
